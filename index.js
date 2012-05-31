@@ -1,3 +1,3 @@
 // start the hello server
-var helloServer = require("./hello");
+var helloServer = require("./server");
 helloServer.start();
