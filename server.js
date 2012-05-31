@@ -2,7 +2,6 @@
 * Requirements                                                                *
 ******************************************************************************/
 var http = require('http');
-var url  = require('url');
 
 /******************************************************************************
 * Server function                                                             *
@@ -10,10 +9,7 @@ var url  = require('url');
 function start(port,route,handle) {
     
     function onRequest(request, response) {
-	var pathname = url.parse(request.url).pathname;
-	response.writeHead(200, {'Content-Type': 'text/plain'});
-	response.write("Path: " + pathname + "\n");
-	response.end();
+	route(handle,request,response);
     };
     
     http.createServer(onRequest).listen(port);

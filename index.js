@@ -12,6 +12,7 @@ var handle = {};
 handle["/"] = requestHandlers.start;
 handle["/start"] = requestHandlers.start;
 handle["/upload"] = requestHandlers.upload;
+handle["not_found"] = requestHandlers.not_found;
 
 /******************************************************************************
 * Start the server                                                            *
