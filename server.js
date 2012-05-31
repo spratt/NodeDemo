@@ -7,17 +7,16 @@ var url  = require('url');
 /******************************************************************************
 * Server function                                                             *
 ******************************************************************************/
-function start() {
-    var __PORT__ = 14974;
+function start(port,route,handle) {
     
     function onRequest(request, response) {
 	var pathname = url.parse(request.url).pathname;
 	response.writeHead(200, {'Content-Type': 'text/plain'});
-	response.write("Request for " + pathname + " received.");
+	response.write("Path: " + pathname + "\n");
 	response.end();
     };
     
-    http.createServer(onRequest).listen(__PORT__);
+    http.createServer(onRequest).listen(port);
 };
 
 /******************************************************************************
